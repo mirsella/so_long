@@ -5,11 +5,12 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 LIBFT = libft/libft.a
+MLX = minilibx-linux/mlx.a
 NAME = so_long
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
+$(NAME): $(LIBFT) $(MLX) $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) -L minilibx-linux -lmlx -lXext -lX11 -lm
 
 clean:
@@ -22,6 +23,9 @@ re: fclean all
 
 $(LIBFT):
 	make -C libft
+
+$(MLX):
+	make -C minilibx-linux
 
 bonus: all
 
