@@ -5,7 +5,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 LIBFT = libft/libft.a
-MLX = minilibx-linux/mlx.a
+MLX = minilibx-linux/libmlx.a
 NAME = so_long
 
 all: $(NAME)
