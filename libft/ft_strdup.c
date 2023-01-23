@@ -6,7 +6,7 @@
 /*   By: mirsella <mirsella@protonmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:13:50 by mirsella          #+#    #+#             */
-/*   Updated: 2022/11/10 00:07:16 by mirsella         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:28:02 by mirsella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,32 @@ char	*ft_strdup(const char *s1)
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+char	**ft_strstrdup(char **strs)
+{
+	char	**new;
+	size_t	i;
+
+	i = 0;
+	while (strs[i])
+		i++;
+	new = malloc(sizeof(char *) * (i + 1));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (strs[i])
+	{
+		new[i] = ft_strdup(strs[i]);
+		if (!new[i])
+		{
+			while (i--)
+				free(new[i]);
+			free(new);
+			return (NULL);
+		}
+		i++;
+	}
+	new[i] = NULL;
+	return (new);
 }

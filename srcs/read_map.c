@@ -6,7 +6,7 @@
 /*   By: mirsella <mirsella@protonmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:04:59 by mirsella          #+#    #+#             */
-/*   Updated: 2023/01/19 16:20:30 by mirsella         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:18:39 by lgillard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ void	check_map(t_game *game)
 	while (len--)
 		if (game->map[0][len] != '1' || game->map[i - 1][len] != '1')
 			exit_message_free_game("map is not closed by 1", game);
-	check_map_items(game, i, len);
+	check_map_items(game, game->map_height, game->map_width);
+	check_map_path(game, game->map_height, game->map_width);
 }
 
 void	load_map(t_game *game, char *filename)

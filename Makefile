@@ -1,4 +1,4 @@
-SRCS = $(addprefix srcs/,main.c key_handler.c closing.c read_map.c load_textures.c draw.c patrols.c)
+SRCS = $(addprefix srcs/,main.c key_handler.c closing.c read_map.c check_map_path.c load_textures.c draw.c patrols.c)
 OBJS = $(SRCS:.c=.o)
 
 CC = cc

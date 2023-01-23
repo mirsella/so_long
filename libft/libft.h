@@ -6,7 +6,7 @@
 /*   By: mirsella <mirsella@protonmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 22:35:33 by mirsella          #+#    #+#             */
-/*   Updated: 2023/01/03 23:45:11 by mirsella         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:28:13 by mirsella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strdup(const char *s1);
+char				**ft_strstrdup(char **strs);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
